@@ -1,0 +1,500 @@
+/* HomePage.module.css */
+
+.container {
+  min-height: 100vh;
+  min-width: 100%;
+  background: linear-gradient(135deg, #f0f4ff 0%, #e6e6ff 100%);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    sans-serif;
+}
+
+/* Navigation Styles */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logoIcon {
+  width: 2rem;
+  height: 2rem;
+  background-color: #4f46e5;
+  border-radius: 0.5rem;
+}
+
+.logoText {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #4f46e5;
+}
+
+.navLinks {
+  display: none;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .navLinks {
+    display: flex;
+  }
+}
+
+.navLink {
+  color: #4f46e5;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.navLink:hover {
+  color: #3730a3;
+}
+
+.primaryButton {
+  background-color: #4f46e5;
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 6px rgba(79, 70, 229, 0.2);
+}
+
+.primaryButton:hover {
+  background-color: #3730a3;
+  box-shadow: 0 6px 8px rgba(79, 70, 229, 0.3);
+}
+
+/* Hero Section Styles */
+.hero {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.heroTitle {
+  font-size: 2.25rem;
+  font-weight: bold;
+  color: #312e81;
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  transform: translateY(2rem);
+  transition: opacity 0.7s, transform 0.7s;
+}
+
+@media (min-width: 768px) {
+  .heroTitle {
+    font-size: 3.75rem;
+  }
+}
+
+.heroSubtitle {
+  font-size: 1.25rem;
+  color: #4f46e5;
+  margin-bottom: 2.5rem;
+  max-width: 42rem;
+  opacity: 0;
+  transform: translateY(2rem);
+  transition: opacity 0.7s 0.15s, transform 0.7s 0.15s;
+}
+
+.heroButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  opacity: 0;
+  transform: translateY(2rem);
+  transition: opacity 0.7s 0.3s, transform 0.7s 0.3s;
+}
+
+@media (min-width: 640px) {
+  .heroButtons {
+    flex-direction: row;
+  }
+}
+
+.heroPrimaryButton {
+  background-color: #4f46e5;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  font-size: 1.125rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 4px 6px rgba(79, 70, 229, 0.2);
+}
+
+.heroPrimaryButton:hover {
+  background-color: #3730a3;
+  transform: translateY(-0.25rem);
+  box-shadow: 0 8px 15px rgba(79, 70, 229, 0.3);
+}
+
+.heroSecondaryButton {
+  border: 1px solid #4f46e5;
+  color: #4f46e5;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  font-size: 1.125rem;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.heroSecondaryButton:hover {
+  background-color: #eef2ff;
+}
+
+.appPreview {
+  margin-top: 5rem;
+  width: 100%;
+  max-width: 56rem;
+  background: white;
+  border-radius: 0.75rem;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(3rem);
+  transition: opacity 1s 0.5s, transform 1s 0.5s;
+}
+
+.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.browserBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.browserDots {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.browserDot {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+}
+
+.browserDot:nth-child(1) {
+  background-color: #f87171;
+}
+
+.browserDot:nth-child(2) {
+  background-color: #fbbf24;
+}
+
+.browserDot:nth-child(3) {
+  background-color: #4ade80;
+}
+
+.browserAddress {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.browserSpacer {
+  width: 4rem;
+}
+
+.appContent {
+  padding: 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .appContent {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+.columnTitle {
+  font-weight: bold;
+  font-size: 1.125rem;
+  margin-bottom: 1rem;
+  color: #1f2937;
+}
+
+.tasksList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.taskItem {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem;
+  background-color: #f0f4ff;
+  border-radius: 0.5rem;
+  border: 1px solid #dbeafe;
+}
+
+.taskCheckbox {
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 2px solid #818cf8;
+  border-radius: 50%;
+  margin-right: 0.75rem;
+}
+
+.taskText {
+  color: #374151;
+}
+
+.statsColumn {
+  background-color: #eef2ff;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.scoreCircle {
+  width: 10rem;
+  height: 10rem;
+  margin: 0 auto;
+  border-radius: 50%;
+  border: 0.75rem solid #e0e7ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scoreValue {
+  font-size: 1.875rem;
+  font-weight: bold;
+  color: #4f46e5;
+}
+
+/* Features Section */
+.features {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 5rem 1.5rem;
+}
+
+.sectionTitle {
+  font-size: 1.875rem;
+  font-weight: bold;
+  text-align: center;
+  color: #312e81;
+  margin-bottom: 1rem;
+}
+
+.sectionSubtitle {
+  font-size: 1.125rem;
+  text-align: center;
+  color: #4f46e5;
+  margin-bottom: 4rem;
+  max-width: 42rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+}
+
+@media (min-width: 768px) {
+  .featuresGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.featureCard {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s;
+  border: 1px solid #e0e7ff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.featureCard:hover {
+  transform: translateY(-0.5rem);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.featureIconContainer {
+  color: #4f46e5;
+  margin-bottom: 1rem;
+  background-color: #eef2ff;
+  padding: 1rem;
+  border-radius: 50%;
+}
+
+.featureIcon {
+  width: 3rem;
+  height: 3rem;
+}
+
+.featureTitle {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #1f2937;
+  margin-bottom: 0.75rem;
+}
+
+.featureDescription {
+  color: #6b7280;
+}
+
+/* CTA Section */
+.cta {
+  background-color: #312e81;
+  color: white;
+  padding: 5rem 1.5rem;
+}
+
+.ctaContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.ctaTitle {
+  font-size: 1.875rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .ctaTitle {
+    font-size: 2.25rem;
+  }
+}
+
+.ctaSubtitle {
+  font-size: 1.125rem;
+  color: #a5b4fc;
+  margin-bottom: 2.5rem;
+  max-width: 42rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ctaButton {
+  background-color: white;
+  color: #312e81;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  font-size: 1.125rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+}
+
+.ctaButton:hover {
+  background-color: #f0f4ff;
+  transform: translateY(-0.25rem);
+  box-shadow: 0 8px 15px rgba(255, 255, 255, 0.2);
+}
+
+/* Footer */
+.footer {
+  background-color: #1e1b4b;
+  color: #a5b4fc;
+  padding: 3rem 1.5rem;
+}
+
+.footerContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+  .footerContent {
+    flex-direction: row;
+  }
+}
+
+.footerLogo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .footerLogo {
+    margin-bottom: 0;
+  }
+}
+
+.footerLogoIcon {
+  width: 2rem;
+  height: 2rem;
+  background-color: #818cf8;
+  border-radius: 0.5rem;
+}
+
+.footerLogoText {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: white;
+}
+
+.footerLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .footerLinks {
+    flex-direction: row;
+    gap: 2rem;
+  }
+}
+
+.footerLink {
+  color: #a5b4fc;
+  transition: color 0.2s;
+}
+
+.footerLink:hover {
+  color: white;
+}
+
+.footerBottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid #3730a3;
+}

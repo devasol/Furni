@@ -1,0 +1,78 @@
+.container {
+  width: 100vw;
+  /* height: 100vh; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* color: black; */
+  margin-left: 100px;
+}
+.logoNameCont {
+  display: flex;
+  align-items: center;
+  opacity: 0.7;
+  cursor: pointer;
+  transition: font-size 0.3s ease, transform 0.2s ease;
+}
+.logoNameCont:hover {
+  font-size: 27px;
+  opacity: 0.5;
+  transform: scale(1.1);
+}
+.logoNameCont .box {
+  width: 15px;
+  height: 15px;
+  background-color: rgb(20, 163, 15);
+  margin-right: 6px;
+  margin-top: 4px;
+}
+.logoNameCont .logoName {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+}
+
+.navContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.navContainer .navLinks {
+  margin-right: 80px;
+}
+.navContainer .navLinks a {
+  list-style-type: none;
+  font-size: 17.5px;
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: 400;
+  padding-right: 30px;
+  text-decoration: none;
+  color: rgb(235, 219, 219);
+  opacity: 0.8;
+  transition: opacity 0.3s ease, transform 0.2s ease;
+  transition: font-size 0.3s ease, transform 0.2s ease;
+}
+.navContainer .navLinks a:hover {
+  opacity: 0.5;
+  font-size: 16px;
+  transform: scale(1.1);
+}
+.navContainer .loginCart {
+  margin-right: 200px;
+  cursor: pointer;
+  display: block;
+  color: black;
+  z-index: 1000;
+}
+.navContainer .loginCart span {
+  padding-right: 15px;
+  font-weight: bold;
+  font-size: 19px;
+  opacity: 0.8;
+  cursor: pointer;
+  color: white;
+}
+.navContainer .loginCart span:hover {
+  opacity: 0.5;
+}
