@@ -152,14 +152,13 @@
   width: 100%;
   height: auto;
   object-fit: contain;
-  /* filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.2)); */
-  transition: all 0.5s ease;
   filter: drop-shadow(10px 15px 15px rgba(0, 0, 0, 0.5));
+  transition: all 0.5s ease;
 }
 
 .image:hover img {
   transform: scale(1.03);
-  filter: drop-shadow(10 15px 25px rgba(0, 0, 0, 0.3));
+  filter: drop-shadow(10px 15px 25px rgba(0, 0, 0, 0.3));
 }
 
 /* Decorative circles */
@@ -194,6 +193,17 @@
   top: 50%;
   right: 50px;
 }
+.reveal {
+  opacity: 0;
+  transform: translateY(30px) scale(0.98);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+  will-change: opacity, transform;
+}
+
+.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
 
 /* Animations */
 @keyframes float {
@@ -208,10 +218,28 @@
   }
 }
 
-/* Responsive Design */
+/* Enhanced Responsive Design */
 @media (max-width: 1200px) {
   .headingTitle {
     font-size: 3rem;
+  }
+
+  .contentWrapper {
+    max-width: 1000px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .headingTitle {
+    font-size: 2.8rem;
+  }
+
+  .description {
+    font-size: 0.95rem;
+  }
+
+  .contentWrapper {
+    gap: 30px;
   }
 }
 
@@ -220,6 +248,7 @@
     flex-direction: column;
     text-align: center;
     gap: 40px;
+    padding: 0 20px;
   }
 
   .headingCont {
@@ -231,38 +260,60 @@
 
   .description {
     width: 80%;
+    max-width: 600px;
   }
 
   .image {
     max-width: 80%;
+    order: -1; /* Image first on mobile */
+  }
+
+  .container .sectionContainer {
+    height: auto;
+    min-height: calc(100vh - 150px);
+    padding: 40px 0;
   }
 }
 
 @media (max-width: 768px) {
   .headingTitle {
     font-size: 2.5rem;
+    padding-bottom: 20px;
   }
 
   .description {
     width: 90%;
+    margin-bottom: 25px;
+    line-height: 1.6;
   }
 
   .image {
     max-width: 85%;
+    margin-bottom: 20px;
   }
 
   .buttons {
     justify-content: center;
+    margin-top: 25px;
+  }
+
+  .container .sectionContainer {
+    margin-top: 20px;
+  }
+
+  .line {
+    width: 85%;
+    margin-top: 10px;
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 640px) {
   .headingTitle {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
 
   .headingTitle span {
-    display: inline;
+    display: block;
   }
 
   .description {
@@ -271,11 +322,37 @@
   }
 
   .image {
+    max-width: 90%;
+  }
+
+  .buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .buttons button {
+    width: 160px;
+  }
+}
+
+@media (max-width: 480px) {
+  .headingTitle {
+    font-size: 2rem;
+    line-height: 1.1;
+  }
+
+  .description {
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+
+  .image {
     max-width: 95%;
   }
 
   .buttons button {
-    width: 120px;
+    width: 140px;
     height: 45px;
     font-size: 0.9rem;
   }
@@ -285,6 +362,37 @@
   .circle3 {
     display: none;
   }
+
+  .container .sectionContainer {
+    padding: 20px 0;
+  }
+}
+
+@media (max-width: 380px) {
+  .headingTitle {
+    font-size: 1.8rem;
+  }
+
+  .description {
+    font-size: 0.85rem;
+  }
+
+  .buttons button {
+    width: 130px;
+    height: 42px;
+    font-size: 0.85rem;
+  }
+}
+
+/* Mobile-specific optimizations */
+.mobileLayout {
+  flex-direction: column-reverse;
+  gap: 30px;
+}
+
+.mobileImage {
+  max-width: 280px !important;
+  margin-bottom: 0;
 }
 
 /* Reduced motion for accessibility */
@@ -300,5 +408,67 @@
 
   .headingCont {
     transition: none;
+  }
+
+  .line {
+    transition: none;
+  }
+}
+
+/* Very small height devices */
+@media (max-height: 700px) and (max-width: 992px) {
+  .container .sectionContainer {
+    height: auto;
+    padding: 30px 0;
+  }
+
+  .contentWrapper {
+    gap: 30px;
+  }
+
+  .headingTitle {
+    font-size: 2.2rem;
+    padding-bottom: 15px;
+  }
+
+  .description {
+    margin-bottom: 20px;
+  }
+
+  .image {
+    max-width: 70%;
+  }
+}
+
+/* Landscape orientation for mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+  .container .sectionContainer {
+    height: auto;
+    min-height: auto;
+    padding: 20px 0 40px 0;
+  }
+
+  .contentWrapper {
+    flex-direction: row;
+    text-align: left;
+    gap: 20px;
+  }
+
+  .headingCont {
+    align-items: flex-start;
+    max-width: 50%;
+  }
+
+  .description {
+    width: 100%;
+  }
+
+  .buttons {
+    justify-content: flex-start;
+  }
+
+  .image {
+    max-width: 45%;
+    order: 2;
   }
 }

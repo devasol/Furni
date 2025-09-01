@@ -1,24 +1,27 @@
 .container {
   width: 100vw;
-  /* height: 100vh; */
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* color: black; */
   margin-left: 100px;
+  position: relative;
 }
+
 .logoNameCont {
   display: flex;
   align-items: center;
   opacity: 0.7;
   cursor: pointer;
   transition: font-size 0.3s ease, transform 0.2s ease;
+  z-index: 1001;
 }
+
 .logoNameCont:hover {
   font-size: 27px;
   opacity: 0.5;
   transform: scale(1.1);
 }
+
 .logoNameCont .box {
   width: 15px;
   height: 15px;
@@ -26,6 +29,7 @@
   margin-right: 6px;
   margin-top: 4px;
 }
+
 .logoNameCont .logoName {
   font-family: "Courier New", Courier, monospace;
   font-size: 30px;
@@ -38,9 +42,11 @@
   align-items: center;
   justify-content: center;
 }
+
 .navContainer .navLinks {
   margin-right: 80px;
 }
+
 .navContainer .navLinks a {
   list-style-type: none;
   font-size: 17.5px;
@@ -53,11 +59,13 @@
   transition: opacity 0.3s ease, transform 0.2s ease;
   transition: font-size 0.3s ease, transform 0.2s ease;
 }
+
 .navContainer .navLinks a:hover {
   opacity: 0.5;
   font-size: 16px;
   transform: scale(1.1);
 }
+
 .navContainer .loginCart {
   margin-right: 200px;
   cursor: pointer;
@@ -65,6 +73,7 @@
   color: black;
   z-index: 1000;
 }
+
 .navContainer .loginCart span {
   padding-right: 15px;
   font-weight: bold;
@@ -73,6 +82,148 @@
   cursor: pointer;
   color: white;
 }
+
 .navContainer .loginCart span:hover {
   opacity: 0.5;
+}
+
+/* Mobile menu toggle button */
+.menuToggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 1001;
+  margin-right: 30px;
+}
+
+/* Mobile overlay */
+.mobileOverlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 998;
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+  .container {
+    margin-left: 50px;
+  }
+
+  .navContainer .navLinks a {
+    padding-right: 20px;
+  }
+
+  .navContainer .loginCart {
+    margin-right: 100px;
+  }
+}
+
+@media (max-width: 992px) {
+  .container {
+    margin-left: 30px;
+  }
+
+  .navContainer .navLinks {
+    margin-right: 40px;
+  }
+
+  .navContainer .navLinks a {
+    padding-right: 15px;
+    font-size: 16px;
+  }
+
+  .navContainer .loginCart {
+    margin-right: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    margin-left: 20px;
+    padding: 15px 0;
+  }
+
+  .navContainer {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100vh;
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 80px;
+    transition: right 0.3s ease-in-out;
+    z-index: 1000;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .navContainer.navOpen {
+    right: 0;
+  }
+
+  .navContainer .navLinks {
+    display: flex;
+    flex-direction: column;
+    margin-right: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .navContainer .navLinks a {
+    padding: 15px 0;
+    margin: 5px 0;
+    font-size: 18px;
+    width: 100%;
+    display: block;
+    transition: background-color 0.3s ease;
+  }
+
+  .navContainer .navLinks a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    font-size: 18px;
+    transform: none;
+  }
+
+  .navContainer .loginCart {
+    margin: 30px 0;
+    display: flex;
+    justify-content: center;
+    margin-right: 0;
+  }
+
+  .menuToggle {
+    display: block;
+  }
+
+  .mobileOverlay {
+    display: block;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    margin-left: 15px;
+  }
+
+  .logoNameCont .logoName {
+    font-size: 24px;
+  }
+
+  .navContainer {
+    width: 80%;
+  }
+
+  .navContainer .navLinks a {
+    font-size: 16px;
+    padding: 12px 0;
+  }
 }

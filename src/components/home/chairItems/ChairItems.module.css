@@ -1,0 +1,368 @@
+:root {
+  --primary-color: #2c3e50;
+  --accent-color: #e67e22;
+  --light-color: #ecf0f1;
+  --dark-color: #34495e;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+  padding: 2rem;
+  box-sizing: border-box;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.container.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.description {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: all 0.8s ease 0.2s;
+}
+
+.container.visible .description {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.title {
+  font-size: 2.5rem;
+  font-family: "Archivo", sans-serif;
+  font-weight: 700;
+  width: 80%;
+  margin-bottom: 1.5rem;
+  color: var(--primary-color);
+  line-height: 1.2;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease 0.4s;
+}
+
+.container.visible .title {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.paragraph {
+  font-size: 1.1rem;
+  font-family: "Archivo", sans-serif;
+  font-weight: 300;
+  width: 80%;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  color: #666;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease 0.6s;
+}
+
+.container.visible .paragraph {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.button {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease 0.8s;
+}
+
+.container.visible .button {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.exploreBtn {
+  width: 140px;
+  height: 50px;
+  border: none;
+  border-radius: 30px;
+  background-color: var(--primary-color);
+  color: white;
+  font-family: "Archivo", sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.exploreBtn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+.exploreBtn:hover {
+  background-color: var(--accent-color);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow);
+}
+
+.exploreBtn:hover::before {
+  left: 100%;
+}
+
+.items {
+  width: 60%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  perspective: 1000px;
+}
+
+.item {
+  width: 280px;
+  background-color: white;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: var(--transition);
+  box-shadow: var(--shadow);
+  opacity: 0;
+  transform: translateY(50px) rotate(5deg);
+}
+
+.container.visible .item {
+  opacity: 1;
+  transform: translateY(0) rotate(0deg);
+}
+
+.item:nth-child(1) {
+  transition: all 0.8s ease 0.5s;
+}
+
+.item:nth-child(2) {
+  transition: all 0.8s ease 0.7s;
+}
+
+.item:nth-child(3) {
+  transition: all 0.8s ease 0.9s;
+}
+
+.item:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+}
+
+.imageContainer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition);
+}
+
+.item:hover .imageContainer img {
+  transform: scale(1.1);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.item:hover .overlay {
+  opacity: 1;
+}
+
+.quickView {
+  padding: 10px 20px;
+  background: white;
+  border: none;
+  border-radius: 20px;
+  font-family: "Archivo", sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+  transform: translateY(20px);
+  transition: var(--transition);
+}
+
+.item:hover .quickView {
+  transform: translateY(0);
+}
+
+.quickView:hover {
+  background: var(--accent-color);
+  color: white;
+}
+
+.itemInfo {
+  padding: 1.5rem;
+}
+
+.itemName {
+  font-family: "Archivo", sans-serif;
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: var(--primary-color);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.itemDescription {
+  font-family: "Archivo", sans-serif;
+  font-size: 0.9rem;
+  color: #777;
+  display: block;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.priceCart {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.itemPrice {
+  font-family: "Archivo", sans-serif;
+  font-size: 1.3rem;
+  color: var(--accent-color);
+}
+
+.addToCart {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: var(--primary-color);
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.addToCart:hover {
+  background: var(--accent-color);
+  transform: rotate(90deg);
+}
+
+.addToCart.adding {
+  animation: addPulse 0.5s ease;
+}
+
+@keyframes addPulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Responsive design */
+@media (max-width: 1200px) {
+  .container {
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .description,
+  .items {
+    width: 100%;
+  }
+
+  .title,
+  .paragraph {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .description {
+    padding: 1rem;
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .items {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .item {
+    width: 100%;
+    max-width: 350px;
+  }
+}
+
+/* Reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .container {
+    opacity: 1;
+    transform: none;
+  }
+
+  .description,
+  .title,
+  .paragraph,
+  .button,
+  .item {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
