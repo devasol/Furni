@@ -159,7 +159,7 @@
   font-size: 18px;
   opacity: 0.8;
   cursor: pointer;
-  color: white;
+  color: black;
   background: rgba(44, 62, 80, 0.05);
   border-radius: 50%;
   margin: 0 8px;
@@ -174,13 +174,13 @@
 .navContainer .loginCart span:hover {
   opacity: 1;
   background: linear-gradient(135deg, #7c4dff 0%, #ff6e6c 100%);
-  color: white;
+  color: black;
   transform: translateY(-3px);
   box-shadow: 0 5px 15px rgba(124, 77, 255, 0.3);
 }
 
 .fixedHeader .loginCart span {
-  color: black;
+  color: white;
   background: rgba(44, 62, 80, 0.05);
 }
 
