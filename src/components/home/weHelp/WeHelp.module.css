@@ -1,0 +1,371 @@
+.container {
+  padding: 6rem 2rem;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease-out;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.imagesWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+@media (min-width: 992px) {
+  .imagesWrapper {
+    flex-direction: row;
+    align-items: center;
+    gap: 5rem;
+  }
+
+  .images {
+    flex: 1;
+  }
+
+  .contentsWrapper {
+    flex: 1;
+  }
+}
+
+.images {
+  position: relative;
+  height: 500px;
+}
+
+@media (min-width: 768px) {
+  .images {
+    height: 600px;
+  }
+}
+
+.imgContainer {
+  position: absolute;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  cursor: pointer;
+}
+
+.imgContainer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.7s ease;
+}
+
+.imgContainer:hover img {
+  transform: scale(1.05);
+}
+
+.imageOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(0, 0, 0, 0.7) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.overlayContent {
+  transform: translateY(20px);
+  transition: transform 0.5s ease;
+}
+
+.overlayContent h3 {
+  color: white;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.overlayContent p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1rem;
+}
+
+.imgContainer:hover .imageOverlay {
+  opacity: 1;
+}
+
+.imgContainer:hover .overlayContent {
+  transform: translateY(0);
+}
+
+/* Image hover effects */
+.imgHovered {
+  z-index: 10 !important;
+  transform: scale(1.05) !important;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25) !important;
+}
+
+.imgDimmed {
+  filter: brightness(0.7);
+  transform: scale(0.95);
+}
+
+.img1 {
+  width: 55%;
+  height: 60%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  transform: rotate(-3deg);
+}
+
+.container.visible .img1 {
+  transform: rotate(0deg);
+}
+
+.img2 {
+  width: 50%;
+  height: 55%;
+  bottom: 0;
+  right: 0;
+  z-index: 2;
+  transform: rotate(3deg);
+}
+
+.container.visible .img2 {
+  transform: rotate(0deg);
+}
+
+.img3 {
+  width: 60%;
+  height: 50%;
+  bottom: 10%;
+  left: 20%;
+  z-index: 3;
+  transform: scale(0.9);
+}
+
+.container.visible .img3 {
+  transform: scale(1);
+}
+
+.contentsWrapper {
+  padding: 1rem 0;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  color: #2d2d2d;
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: all 0.6s ease 0.2s;
+}
+
+.container.visible .title {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.description {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+  color: #666;
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: all 0.6s ease 0.3s;
+}
+
+.container.visible .description {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.lists {
+  margin-bottom: 3rem;
+}
+
+.listItem {
+  display: flex;
+  align-items: flex-start;
+  padding: 1.2rem 1rem;
+  margin-bottom: 0.8rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateX(-20px);
+}
+
+.container.visible .listItem {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.listItem:nth-child(1) {
+  transition: all 0.5s ease 0.4s;
+}
+
+.listItem:nth-child(2) {
+  transition: all 0.5s ease 0.5s;
+}
+
+.listItem:nth-child(3) {
+  transition: all 0.5s ease 0.6s;
+}
+
+.listItem:nth-child(4) {
+  transition: all 0.5s ease 0.7s;
+}
+
+.listItem:hover,
+.listItem.active {
+  background-color: rgba(124, 77, 255, 0.05);
+  transform: translateX(5px);
+}
+
+.listIcon {
+  margin-right: 1rem;
+  position: relative;
+}
+
+.listNumber {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background-color: #7c4dff;
+  color: white;
+  border-radius: 50%;
+  font-size: 0.8rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.listItem:hover .listNumber,
+.listItem.active .listNumber {
+  transform: scale(1.1);
+  background-color: #ff6e6c;
+}
+
+.listLine {
+  width: 2px;
+  height: 0;
+  background-color: #7c4dff;
+  margin: 0.3rem auto 0;
+  transition: height 0.3s ease;
+}
+
+.listItem:hover .listLine,
+.listItem.active .listLine {
+  height: 20px;
+}
+
+.listContent h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.4rem;
+  color: #2d2d2d;
+  transition: color 0.3s ease;
+}
+
+.listItem:hover h3,
+.listItem.active h3 {
+  color: #7c4dff;
+}
+
+.listContent p {
+  font-size: 0.9rem;
+  color: #888;
+  line-height: 1.5;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, margin-top 0.3s ease;
+}
+
+.listItem:hover p,
+.listItem.active p {
+  max-height: 100px;
+  margin-top: 0.5rem;
+}
+
+.buttonWrapper {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease 0.8s;
+}
+
+.container.visible .buttonWrapper {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.exploreBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1rem 2rem;
+  background: linear-gradient(45deg, #7c4dff, #ff6e6c);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 20px rgba(124, 77, 255, 0.3);
+  overflow: hidden;
+  position: relative;
+}
+
+.exploreBtn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: all 0.6s ease;
+}
+
+.exploreBtn:hover::before {
+  left: 100%;
+}
+
+.exploreBtn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 25px rgba(124, 77, 255, 0.4);
+}
+
+.exploreBtn:active {
+  transform: translateY(0);
+}
+
+.exploreBtn svg {
+  transition: transform 0.3s ease;
+}
+
+.exploreBtn:hover svg {
+  transform: translateX(5px);
+}
