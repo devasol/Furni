@@ -5,38 +5,94 @@
   justify-content: space-between;
   margin-left: 100px;
   position: relative;
+  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
+/* Amazing Fixed Header Styles */
+.fixedHeader {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  margin-left: 0 !important;
+  background: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  z-index: 9999;
+  padding: 12px 0;
+  animation: smoothSlideDown 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+/* Animation for fixed header */
+@keyframes smoothSlideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Logo styles */
 .logoNameCont {
   display: flex;
   align-items: center;
-  opacity: 0.7;
   cursor: pointer;
-  transition: font-size 0.3s ease, transform 0.2s ease;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   z-index: 1001;
+  margin-left: 20px;
 }
 
 .logoNameCont:hover {
-  font-size: 27px;
-  opacity: 0.5;
-  transform: scale(1.1);
+  transform: scale(1.05);
+}
+
+.fixedHeader .logoNameCont {
+  margin-left: 40px;
+  transform: scale(0.95);
+}
+
+.fixedHeader .logoNameCont:hover {
+  transform: scale(1.02);
 }
 
 .logoNameCont .box {
-  width: 15px;
-  height: 15px;
-  background-color: rgb(20, 163, 15);
-  margin-right: 6px;
-  margin-top: 4px;
+  width: 18px;
+  height: 18px;
+  background: linear-gradient(135deg, #7c4dff 0%, #ff6e6c 100%);
+  margin-right: 8px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.logoNameCont:hover .box {
+  transform: rotate(15deg);
 }
 
 .logoNameCont .logoName {
-  font-family: "Courier New", Courier, monospace;
-  font-size: 30px;
-  font-weight: bold;
-  color: white;
+  font-family: "Poppins", sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #125fac 0%, #431bb1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.5px;
+  transition: all 0.3s ease;
 }
 
+.fixedHeader .logoNameCont .logoName {
+  background: linear-gradient(135deg, #8e6fe3 0%, #ff6e6c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Navigation container */
 .navContainer {
   display: flex;
   align-items: center;
@@ -45,46 +101,92 @@
 
 .navContainer .navLinks {
   margin-right: 80px;
+  display: flex;
+  align-items: center;
 }
 
 .navContainer .navLinks a {
   list-style-type: none;
-  font-size: 17.5px;
-  font-family: "M PLUS Rounded 1c", sans-serif;
-  font-weight: 400;
-  padding-right: 30px;
+  font-size: 16px;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  padding: 8px 20px;
   text-decoration: none;
-  color: rgb(235, 219, 219);
-  opacity: 0.8;
-  transition: opacity 0.3s ease, transform 0.2s ease;
-  transition: font-size 0.3s ease, transform 0.2s ease;
+  color: white;
+  position: relative;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+  margin: 0 5px;
+}
+
+.navContainer .navLinks a::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(135deg, #7c4dff 0%, #ff6e6c 100%);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
 }
 
 .navContainer .navLinks a:hover {
-  opacity: 0.5;
-  font-size: 16px;
-  transform: scale(1.1);
+  color: black;
+  background: rgba(124, 77, 255, 0.05);
+  transform: translateY(-2px);
 }
 
+.navContainer .navLinks a:hover::before {
+  width: 60%;
+}
+
+.fixedHeader .navLinks a {
+  color: black !important;
+}
+
+/* Login cart styles */
 .navContainer .loginCart {
-  margin-right: 200px;
+  margin-right: 150px;
   cursor: pointer;
-  display: block;
-  color: black;
+  display: flex;
+  align-items: center;
   z-index: 1000;
 }
 
 .navContainer .loginCart span {
-  padding-right: 15px;
-  font-weight: bold;
-  font-size: 19px;
+  padding: 10px 12px;
+  font-size: 18px;
   opacity: 0.8;
   cursor: pointer;
   color: white;
+  background: rgba(44, 62, 80, 0.05);
+  border-radius: 50%;
+  margin: 0 8px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
 }
 
 .navContainer .loginCart span:hover {
-  opacity: 0.5;
+  opacity: 1;
+  background: linear-gradient(135deg, #7c4dff 0%, #ff6e6c 100%);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(124, 77, 255, 0.3);
+}
+
+.fixedHeader .loginCart span {
+  color: black;
+  background: rgba(44, 62, 80, 0.05);
+}
+
+.fixedHeader .loginCart span:hover {
+  background: linear-gradient(135deg, #7c4dff 0%, #ff6e6c 100%);
+  color: black;
 }
 
 /* Mobile menu toggle button */
@@ -92,11 +194,25 @@
   display: none;
   background: none;
   border: none;
-  color: white;
+  color: #2c3e50;
   font-size: 24px;
   cursor: pointer;
   z-index: 1001;
   margin-right: 30px;
+  background: rgba(44, 62, 80, 0.05);
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.menuToggle:hover {
+  background: linear-gradient(135deg, #7c4dff 0%, #ff6e6c 100%);
+  color: white;
+  transform: scale(1.05);
 }
 
 /* Mobile overlay */
@@ -111,6 +227,19 @@
   z-index: 998;
 }
 
+/* Ensure the mobile menu stays properly positioned when fixed */
+@media (max-width: 768px) {
+  .fixedHeader .navContainer {
+    top: 0;
+    height: 100vh;
+    background: white;
+  }
+
+  .fixedHeader {
+    padding: 10px 0;
+  }
+}
+
 /* Responsive styles */
 @media (max-width: 1200px) {
   .container {
@@ -118,11 +247,12 @@
   }
 
   .navContainer .navLinks a {
-    padding-right: 20px;
+    padding: 8px 15px;
+    font-size: 15px;
   }
 
   .navContainer .loginCart {
-    margin-right: 100px;
+    margin-right: 80px;
   }
 }
 
@@ -132,38 +262,57 @@
   }
 
   .navContainer .navLinks {
-    margin-right: 40px;
+    margin-right: 30px;
   }
 
   .navContainer .navLinks a {
-    padding-right: 15px;
-    font-size: 16px;
+    padding: 6px 12px;
+    font-size: 14px;
   }
 
   .navContainer .loginCart {
-    margin-right: 50px;
+    margin-right: 40px;
+  }
+
+  .navContainer .loginCart span {
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
   }
 }
 
 @media (max-width: 768px) {
   .container {
     margin-left: 20px;
-    padding: 15px 0;
+    padding: 12px 0;
+  }
+
+  .fixedHeader {
+    padding: 8px 0;
+  }
+
+  .fixedHeader .logoNameCont {
+    margin-left: 20px;
+  }
+
+  .menuToggle {
+    margin-right: 20px;
   }
 
   .navContainer {
     position: fixed;
     top: 0;
     right: -100%;
-    width: 70%;
+    width: 280px;
     height: 100vh;
-    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    background: white;
     flex-direction: column;
     justify-content: flex-start;
     padding-top: 80px;
-    transition: right 0.3s ease-in-out;
+    transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     z-index: 1000;
-    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    box-shadow: -5px 0 25px rgba(0, 0, 0, 0.1);
+    border-left: 1px solid rgba(0, 0, 0, 0.05);
   }
 
   .navContainer.navOpen {
@@ -175,22 +324,29 @@
     flex-direction: column;
     margin-right: 0;
     width: 100%;
-    text-align: center;
+    text-align: left;
+    padding: 0 20px;
   }
 
   .navContainer .navLinks a {
-    padding: 15px 0;
+    padding: 15px 20px;
     margin: 5px 0;
-    font-size: 18px;
+    font-size: 16px;
     width: 100%;
     display: block;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    color: #2c3e50;
   }
 
   .navContainer .navLinks a:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    font-size: 18px;
-    transform: none;
+    background: linear-gradient(135deg, #7c4dff 0%, #ff6e6c 100%);
+    color: white;
+    transform: translateX(5px);
+  }
+
+  .navContainer .navLinks a::before {
+    display: none;
   }
 
   .navContainer .loginCart {
@@ -198,10 +354,12 @@
     display: flex;
     justify-content: center;
     margin-right: 0;
+    padding: 0 20px;
+    width: 100%;
   }
 
   .menuToggle {
-    display: block;
+    display: flex;
   }
 
   .mobileOverlay {
@@ -219,11 +377,21 @@
   }
 
   .navContainer {
-    width: 80%;
+    width: 85%;
   }
 
   .navContainer .navLinks a {
-    font-size: 16px;
-    padding: 12px 0;
+    font-size: 15px;
+    padding: 12px 20px;
+  }
+
+  .fixedHeader .logoNameCont {
+    margin-left: 15px;
+  }
+
+  .menuToggle {
+    margin-right: 15px;
+    width: 40px;
+    height: 40px;
   }
 }
