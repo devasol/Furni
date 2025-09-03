@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { NavLink } from "react-router-dom";
 import styles from "./Header.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -68,21 +69,24 @@ export default function Header() {
           }`}
         >
           <div className={styles.navLinks}>
-            <a href="#" onClick={() => isMobile && setIsMenuOpen(false)}>
+            <NavLink to="/" onClick={() => isMobile && setIsMenuOpen(false)}>
               Home
-            </a>
-            <a href="#" onClick={() => isMobile && setIsMenuOpen(false)}>
+            </NavLink>
+            <NavLink
+              to="/about-us"
+              onClick={() => isMobile && setIsMenuOpen(false)}
+            >
               About us
-            </a>
-            <a href="#" onClick={() => isMobile && setIsMenuOpen(false)}>
+            </NavLink>
+            <NavLink to="#" onClick={() => isMobile && setIsMenuOpen(false)}>
               Services
-            </a>
-            <a href="#" onClick={() => isMobile && setIsMenuOpen(false)}>
+            </NavLink>
+            <NavLink to="#" onClick={() => isMobile && setIsMenuOpen(false)}>
               Blog
-            </a>
-            <a href="#" onClick={() => isMobile && setIsMenuOpen(false)}>
+            </NavLink>
+            <NavLink to="#" onClick={() => isMobile && setIsMenuOpen(false)}>
               Contact us
-            </a>
+            </NavLink>
           </div>
           <div className={styles.loginCart}>
             <span>
