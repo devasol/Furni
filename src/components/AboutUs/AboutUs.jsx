@@ -220,7 +220,7 @@ const AboutUs = () => {
                   </div>
                   <div className={styles.stackImage2}>
                     <img
-                      src="https://images.unsplash.com/photo-1493663284031-b7e3aaa4c4b0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+                      src="https://images.unsplash.com/photo-1567016432779-094069958ea5?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                       alt="Furniture making"
                     />
                   </div>
@@ -242,7 +242,7 @@ const AboutUs = () => {
                 className={styles.statNumber}
                 data-count="18"
               >
-                0
+                1+
               </span>
               <span className={styles.statLabel}>Years Experience</span>
             </div>
@@ -252,7 +252,7 @@ const AboutUs = () => {
                 className={styles.statNumber}
                 data-count="2500"
               >
-                0
+                10,000+
               </span>
               <span className={styles.statLabel}>Happy Customers</span>
             </div>
@@ -262,7 +262,7 @@ const AboutUs = () => {
                 className={styles.statNumber}
                 data-count="15"
               >
-                0
+                1000+
               </span>
               <span className={styles.statLabel}>Master Craftsmen</span>
             </div>
@@ -272,7 +272,7 @@ const AboutUs = () => {
                 className={styles.statNumber}
                 data-count="98"
               >
-                0
+                100
               </span>
               <span className={styles.statLabel}>% Satisfaction</span>
             </div>
@@ -289,7 +289,7 @@ const AboutUs = () => {
           <div className={styles.gallery}>
             <div className={styles.galleryItem}>
               <img
-                src="https://images.unsplash.com/photo-1505842381624-c6b0579625a5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+                src="https://plus.unsplash.com/premium_photo-1664193968894-b1257541f463?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 alt="Woodworking"
               />
               <div className={styles.galleryOverlay}>
@@ -315,117 +315,6 @@ const AboutUs = () => {
               <div className={styles.galleryOverlay}>
                 <h3>Final Finish</h3>
                 <p>Eco-friendly stains and protective coatings</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Team Section */}
-        <section
-          ref={(el) => (sectionRefs.current[2] = el)}
-          className={styles.section}
-        >
-          <div className={styles.container}>
-            <h2 className={styles.teamTitle}>Meet Our Artisans</h2>
-            <p className={styles.teamSubtitle}>
-              The talented individuals behind our beautiful creations
-            </p>
-
-            <div className={styles.teamGrid}>
-              <div className={styles.teamMember}>
-                <div className={styles.memberImage}>
-                  <img
-                    src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
-                    alt="Master craftsman"
-                  />
-                  <div className={styles.imageOverlay}>
-                    <div className={styles.socialLinks}>
-                      <a href="#" className={styles.socialLink}>
-                        <i className="fab fa-instagram"></i>
-                      </a>
-                      <a href="#" className={styles.socialLink}>
-                        <i className="fab fa-linkedin"></i>
-                      </a>
-                      <a href="#" className={styles.socialLink}>
-                        <i className="fab fa-twitter"></i>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <h3 className={styles.memberName}>Michael Rodriguez</h3>
-                <p className={styles.memberRole}>Lead Craftsman & Founder</p>
-              </div>
-
-              <div className={styles.teamMember}>
-                <div className={styles.memberImage}>
-                  <img
-                    src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80"
-                    alt="Furniture designer"
-                  />
-                  <div className={styles.imageOverlay}>
-                    <div className={styles.socialLinks}>
-                      <a href="#" className={styles.socialLink}>
-                        <i className="fab fa-instagram"></i>
-                      </a>
-                      <a href="#" className={styles.socialLink}>
-                        <i className="fab fa-linkedin"></i>
-                      </a>
-                      <a href="#" className={styles.socialLink}>
-                        <i className="fab fa-twitter"></i>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <h3 className={styles.memberName}>Sarah Johnson</h3>
-                <p className={styles.memberRole}>Head Designer</p>
-              </div>
-
-              <div className={styles.teamMember}>
-                <div className={styles.memberImage}>
-                  <img
-                    src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
-                    alt="Wood specialist"
-                  />
-                  <div className={styles.imageOverlay}>
-                    <div className={styles.socialLinks}>
-                      <a href="#" className={styles.socialLink}>
-                        <i className="fab fa-instagram"></i>
-                      </a>
-                      <a href="#" className={styles.socialLink}>
-                        <i className="fab fa-linkedin"></i>
-                      </a>
-                      <a href="#" className={styles.socialLink}>
-                        <i className="fab fa-twitter"></i>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <h3 className={styles.memberName}>James Wilson</h3>
-                <p className={styles.memberRole}>Wood Specialist</p>
-              </div>
-
-              <div className={styles.teamMember}>
-                <div className={styles.memberImage}>
-                  <img
-                    src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80"
-                    alt="Interior designer"
-                  />
-                  <div className={styles.imageOverlay}>
-                    <div className={styles.socialLinks}>
-                      <a href="#" className={styles.socialLink}>
-                        <i className="fab fa-instagram"></i>
-                      </a>
-                      <a href="#" className={styles.socialLink}>
-                        <i className="fab fa-linkedin"></i>
-                      </a>
-                      <a href="#" className={styles.socialLink}>
-                        <i className="fab fa-twitter"></i>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <h3 className={styles.memberName}>Emma Thompson</h3>
-                <p className={styles.memberRole}>Interior Designer</p>
               </div>
             </div>
           </div>
