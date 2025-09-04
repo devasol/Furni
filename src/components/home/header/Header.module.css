@@ -226,6 +226,9 @@
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 998;
 }
+.active {
+  background-color: rgb(97, 230, 235);
+}
 
 /* Ensure the mobile menu stays properly positioned when fixed */
 @media (max-width: 768px) {

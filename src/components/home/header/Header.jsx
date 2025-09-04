@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import styles from "./Header.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -58,10 +58,13 @@ export default function Header() {
       <header
         className={`${styles.container} ${isFixed ? styles.fixedHeader : ""}`}
       >
-        <div className={styles.logoNameCont}>
-          <div className={styles.box}></div>
-          <h3 className={styles.logoName}>Furni</h3>
-        </div>
+        <NavLink to="/" style={{ textDecoration: "none" }}>
+          <div className={styles.logoNameCont}>
+            <div className={styles.box}></div>
+
+            <h3 className={styles.logoName}>Furni</h3>
+          </div>
+        </NavLink>
 
         <div
           className={`${styles.navContainer} ${
@@ -69,22 +72,49 @@ export default function Header() {
           }`}
         >
           <div className={styles.navLinks}>
-            <NavLink to="/" onClick={() => isMobile && setIsMenuOpen(false)}>
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                isActive ? `${styles.link} ${styles.active}` : styles.link
+              }
+              onClick={() => isMobile && setIsMenuOpen(false)}
+            >
               Home
             </NavLink>
             <NavLink
               to="/about-us"
+              className={({ isActive }) =>
+                isActive ? `${styles.link} ${styles.active}` : styles.link
+              }
               onClick={() => isMobile && setIsMenuOpen(false)}
             >
               About us
             </NavLink>
-            <NavLink to="#" onClick={() => isMobile && setIsMenuOpen(false)}>
+            <NavLink
+              to="/services"
+              className={({ isActive }) =>
+                isActive ? `${styles.link} ${styles.active}` : styles.link
+              }
+              onClick={() => isMobile && setIsMenuOpen(false)}
+            >
               Services
             </NavLink>
-            <NavLink to="#" onClick={() => isMobile && setIsMenuOpen(false)}>
+            <NavLink
+              to="/blog"
+              className={({ isActive }) =>
+                isActive ? `${styles.link} ${styles.active}` : styles.link
+              }
+              onClick={() => isMobile && setIsMenuOpen(false)}
+            >
               Blog
             </NavLink>
-            <NavLink to="#" onClick={() => isMobile && setIsMenuOpen(false)}>
+            <NavLink
+              to="/contact-us"
+              className={({ isActive }) =>
+                isActive ? `${styles.link} ${styles.active}` : styles.link
+              }
+              onClick={() => isMobile && setIsMenuOpen(false)}
+            >
               Contact us
             </NavLink>
           </div>
