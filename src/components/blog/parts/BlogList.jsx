@@ -2,7 +2,13 @@ import React from "react";
 import BlogCard from "./BlogCard";
 import styles from "../Blog.module.css";
 
-export default function BlogList({ categories, activeCategory, setActiveCategory, posts, handleImageLoad }) {
+export default function BlogList({
+  categories,
+  activeCategory,
+  setActiveCategory,
+  posts,
+  handleImageLoad,
+}) {
   return (
     <section className={styles.blogContent}>
       <div className={styles.categoryFilters}>
@@ -19,7 +25,12 @@ export default function BlogList({ categories, activeCategory, setActiveCategory
 
       <div className={styles.blogGrid}>
         {posts.map((post, index) => (
-          <BlogCard key={post.id} post={post} index={index} handleImageLoad={handleImageLoad} />
+          <BlogCard
+            key={post.id}
+            post={post}
+            index={index}
+            handleImageLoad={handleImageLoad}
+          />
         ))}
       </div>
 

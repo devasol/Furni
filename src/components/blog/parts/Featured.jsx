@@ -22,8 +22,8 @@ export default function Featured({ sectionRef, imageLoaded, handleImageLoad }) {
           </h2>
           <p>
             Discover the emerging styles, materials, and colors that are
-            defining interior design this year and how to incorporate them
-            into your home.
+            defining interior design this year and how to incorporate them into
+            your home.
           </p>
           <div className={styles.postMeta}>
             <img

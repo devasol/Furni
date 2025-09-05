@@ -155,9 +155,17 @@ const Blog = () => {
       </div>
 
       <div className={`${styles.blogPage} ${loaded ? styles.loaded : ""}`}>
-        <Hero sectionRef={(el) => (sectionRefs.current[0] = el)} imageLoaded={imageLoaded} handleImageLoad={handleImageLoad} />
+        <Hero
+          sectionRef={(el) => (sectionRefs.current[0] = el)}
+          imageLoaded={imageLoaded}
+          handleImageLoad={handleImageLoad}
+        />
 
-        <Featured sectionRef={(el) => (sectionRefs.current[1] = el)} imageLoaded={imageLoaded} handleImageLoad={handleImageLoad} />
+        <Featured
+          sectionRef={(el) => (sectionRefs.current[1] = el)}
+          imageLoaded={imageLoaded}
+          handleImageLoad={handleImageLoad}
+        />
 
         <BlogList
           categories={categories}

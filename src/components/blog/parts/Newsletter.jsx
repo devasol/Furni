@@ -7,8 +7,8 @@ export default function Newsletter({ sectionRef }) {
       <div className={styles.newsletterContent}>
         <h2>Stay Updated with Furni</h2>
         <p>
-          Subscribe to our newsletter for the latest articles, product
-          updates, and exclusive offers.
+          Subscribe to our newsletter for the latest articles, product updates,
+          and exclusive offers.
         </p>
         <form className={styles.newsletterForm}>
           <input type="email" placeholder="Your email address" />
