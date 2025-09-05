@@ -2,38 +2,32 @@ import React, { useState, useEffect, useRef } from "react";
 import styles from "./Blog.module.css";
 import Header from "../home/header/Header";
 import Footer from "../home/footer/Footer";
+import Hero from "./parts/Hero";
+import Featured from "./parts/Featured";
+import BlogList from "./parts/BlogList";
+import Newsletter from "./parts/Newsletter";
 
 const Blog = () => {
   const [activeCategory, setActiveCategory] = useState("all");
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [imageLoaded, setImageLoaded] = useState({});
   const sectionRefs = useRef([]);
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
-    // Set loaded to true after component mounts to trigger animations
     setLoaded(true);
 
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-
-      // Animate sections on scroll
-      sectionRefs.current.forEach((section, index) => {
+      sectionRefs.current.forEach((section) => {
         if (!section) return;
-
         const rect = section.getBoundingClientRect();
-        const isInViewport = rect.top < window.innerHeight * 0.85;
-
-        if (isInViewport) {
+        if (rect.top < window.innerHeight * 0.85) {
           section.classList.add(styles.visible);
         }
       });
     };
 
     window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Initial check
-
+    handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -161,162 +155,19 @@ const Blog = () => {
       </div>
 
       <div className={`${styles.blogPage} ${loaded ? styles.loaded : ""}`}>
-        {/* Hero Section */}
-        <section
-          className={styles.hero}
-          ref={(el) => (sectionRefs.current[0] = el)}
-        >
-          <div className={styles.heroContent}>
-            <h1 className={styles.heroTitle}>Furni Blog</h1>
-            <p className={styles.heroSubtitle}>
-              Inspiration, tips, and trends for creating your perfect space
-            </p>
-            <div className={styles.searchBox}>
-              <input type="text" placeholder="Search articles..." />
-              <button>Search</button>
-            </div>
-          </div>
-          <div className={styles.heroImage}>
-            <div className={styles.imageContainer}>
-              <img
-                src="https://images.unsplash.com/photo-1567016432779-094069958ea5?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt="Featured post"
-                onLoad={() => handleImageLoad("hero")}
-              />
-              {!imageLoaded["hero"] && (
-                <div className={styles.imagePlaceholder}></div>
-              )}
-            </div>
-          </div>
-        </section>
+        <Hero sectionRef={(el) => (sectionRefs.current[0] = el)} imageLoaded={imageLoaded} handleImageLoad={handleImageLoad} />
 
-        {/* Featured Post */}
-        <section
-          className={styles.featured}
-          ref={(el) => (sectionRefs.current[1] = el)}
-        >
-          <div className={styles.featuredContent}>
-            <div className={styles.featuredImage}>
-              <img
-                src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDB8fGZ1cm5pdHVyZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=80"
-                alt="Featured post"
-                onLoad={() => handleImageLoad("featured")}
-              />
-              {!imageLoaded["featured"] && (
-                <div className={styles.imagePlaceholder}></div>
-              )}
-            </div>
-            <div className={styles.featuredText}>
-              <span className={styles.featuredBadge}>Featured</span>
-              <h2>
-                Transforming Spaces: The 2023 Furniture Trends You Need to Know
-              </h2>
-              <p>
-                Discover the emerging styles, materials, and colors that are
-                defining interior design this year and how to incorporate them
-                into your home.
-              </p>
-              <div className={styles.postMeta}>
-                <img
-                  src="https://images.unsplash.com/photo-1567532939604-b6b5b0db1604?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80"
-                  alt="Author"
-                  onLoad={() => handleImageLoad("author")}
-                />
-                {!imageLoaded["author"] && (
-                  <div className={styles.avatarPlaceholder}></div>
-                )}
-                <div>
-                  <span>Jennifer Adams</span>
-                  <span>June 2, 2023 · 10 min read</span>
-                </div>
-              </div>
-              <button className={styles.readMore}>Read Article</button>
-            </div>
-          </div>
-        </section>
+        <Featured sectionRef={(el) => (sectionRefs.current[1] = el)} imageLoaded={imageLoaded} handleImageLoad={handleImageLoad} />
 
-        {/* Blog Content */}
-        <section className={styles.blogContent}>
-          {/* Category Filters */}
-          <div className={styles.categoryFilters}>
-            {categories.map((category) => (
-              <button
-                key={category.id}
-                className={activeCategory === category.id ? styles.active : ""}
-                onClick={() => setActiveCategory(category.id)}
-              >
-                {category.name}
-              </button>
-            ))}
-          </div>
+        <BlogList
+          categories={categories}
+          activeCategory={activeCategory}
+          setActiveCategory={setActiveCategory}
+          posts={filteredPosts}
+          handleImageLoad={handleImageLoad}
+        />
 
-          {/* Blog Grid */}
-          <div className={styles.blogGrid}>
-            {filteredPosts.map((post, index) => (
-              <article
-                key={post.id}
-                className={styles.blogCard}
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className={styles.cardImage}>
-                  <img
-                    src={post.image}
-                    alt={post.title}
-                    onLoad={() => handleImageLoad(post.id)}
-                  />
-                  {!imageLoaded[post.id] && (
-                    <div className={styles.imagePlaceholder}></div>
-                  )}
-                  <div className={styles.categoryTag}>{post.category}</div>
-                </div>
-                <div className={styles.cardContent}>
-                  <h3>{post.title}</h3>
-                  <p>{post.excerpt}</p>
-                  <div className={styles.cardMeta}>
-                    <div className={styles.author}>
-                      <img
-                        src={post.author.avatar}
-                        alt={post.author.name}
-                        onLoad={() => handleImageLoad(`avatar-${post.id}`)}
-                      />
-                      {!imageLoaded[`avatar-${post.id}`] && (
-                        <div className={styles.avatarPlaceholder}></div>
-                      )}
-                      <span>{post.author.name}</span>
-                    </div>
-                    <div className={styles.metaInfo}>
-                      <span>{post.date}</span>
-                      <span>{post.readTime}</span>
-                    </div>
-                  </div>
-                </div>
-              </article>
-            ))}
-          </div>
-
-          {/* Load More Button */}
-          <div className={styles.loadMore}>
-            <button>Load More Articles</button>
-          </div>
-        </section>
-
-        {/* Newsletter Section */}
-        <section
-          className={styles.newsletter}
-          ref={(el) => (sectionRefs.current[2] = el)}
-        >
-          <div className={styles.newsletterContent}>
-            <h2>Stay Updated with Furni</h2>
-            <p>
-              Subscribe to our newsletter for the latest articles, product
-              updates, and exclusive offers.
-            </p>
-            <form className={styles.newsletterForm}>
-              <input type="email" placeholder="Your email address" />
-              <button type="submit">Subscribe</button>
-            </form>
-          </div>
-        </section>
+        <Newsletter sectionRef={(el) => (sectionRefs.current[2] = el)} />
       </div>
       <Footer />
     </>
