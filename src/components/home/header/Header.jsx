@@ -119,9 +119,12 @@ export default function Header() {
             </NavLink>
           </div>
           <div className={styles.loginCart}>
-            <span>
-              <FontAwesomeIcon icon={faUser} />
-            </span>
+            <NavLink to="/login">
+              <span>
+                <FontAwesomeIcon icon={faUser} />
+              </span>
+            </NavLink>
+
             <span>
               <FontAwesomeIcon icon={faCartShopping} />
             </span>

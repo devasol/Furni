@@ -35,6 +35,9 @@ const AboutUs = () => {
 
   useEffect(() => {
     // Add animation class to each section with a delay
+
+    document.title = "AboutUs | Furni";
+
     sectionRefs.current.forEach((section, index) => {
       if (section) {
         setTimeout(() => {

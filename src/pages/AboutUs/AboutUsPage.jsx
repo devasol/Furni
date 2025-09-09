@@ -1,4 +1,4 @@
-import React from "react";
+import { useEffect } from "react";
 import AboutUs from "../../components/AboutUs/AboutUs";
 
 function AboutUsPage() {
