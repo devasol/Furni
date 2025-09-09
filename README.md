@@ -2,6 +2,10 @@
 
 Furni is a modern, responsive, and feature-rich e-commerce website for furniture. Built with React and Vite, it offers a seamless user experience with fast performance and a clean design.
 
+## Live Demo
+
+Check out the live demo: [Furni Live Demo](https://get-furni.netlify.app/)
+
 ## Features
 
 - **Home Page**: Showcases featured products, categories, and promotional content.
