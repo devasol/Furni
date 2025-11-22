@@ -3,26 +3,30 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-left: 100px;
+  margin: 0;
   position: relative;
   transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  background: transparent;
+  padding: 5px 40px;
+  box-sizing: border-box;
 }
 
-/* Amazing Fixed Header Styles */
-.fixedHeader {
+/* Landing Page Header Styles */
+.landingHeader {
+  background: transparent !important;
+}
+
+/* Scrolled Header Styles */
+.scrolledHeader {
   position: fixed !important;
   top: 0;
   left: 0;
-  width: 100% !important;
-  margin-left: 0 !important;
-  background: rgba(255, 255, 255, 0.95) !important;
-  backdrop-filter: blur(12px) saturate(180%);
-  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  width: 100vw !important;
+  background: white !important;
   z-index: 9999;
-  padding: 12px 0;
-  animation: smoothSlideDown 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+  padding: 5px 40px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  box-sizing: border-box;
 }
 
 /* Animation for fixed header */
@@ -44,16 +48,10 @@
   cursor: pointer;
   transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   z-index: 1001;
-  margin-left: 20px;
 }
 
 .logoNameCont:hover {
   transform: scale(1.05);
-}
-
-.fixedHeader .logoNameCont {
-  margin-left: 40px;
-  transform: scale(0.95);
 }
 
 .fixedHeader .logoNameCont:hover {
@@ -74,49 +72,61 @@
 }
 
 .logoNameCont .logoName {
-  font-family: "Poppins", sans-serif;
-  font-size: 28px;
-  font-weight: 700;
-  background: linear-gradient(135deg, #125fac 0%, #431bb1 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  font-family: 'Montserrat', 'Poppins', sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  color: #2c3e50;
   letter-spacing: -0.5px;
   transition: all 0.3s ease;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.logoNameCont .logoName:hover {
+  color: #3498db;
+  text-shadow: 0 2px 4px rgba(52, 152, 219, 0.2);
+}
+
+.landingHeader .logoNameCont .logoName {
+  color: white;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+.landingHeader .logoNameCont .logoName:hover {
+  color: #3498db;
+  text-shadow: 0 2px 6px rgba(52, 152, 219, 0.4);
 }
 
 .fixedHeader .logoNameCont .logoName {
-  background: linear-gradient(135deg, #8e6fe3 0%, #ff6e6c 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #2c3e50;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.05);
 }
 
 /* Navigation container */
 .navContainer {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
+  flex: 1;
 }
 
 .navContainer .navLinks {
-  margin-right: 80px;
   display: flex;
   align-items: center;
+  margin-right: 25px;
 }
 
 .navContainer .navLinks a {
   list-style-type: none;
-  font-size: 16px;
-  font-family: "Inter", sans-serif;
-  font-weight: bold;
-  padding: 8px 20px;
+  font-size: 15px;
+  font-family: 'Raleway', 'Inter', sans-serif;
+  font-weight: 600;
+  padding: 6px 16px;
   text-decoration: none;
-  color: rgb(22, 170, 79);
+  color: #34495e;
   position: relative;
   transition: all 0.3s ease;
-  border-radius: 8px;
-  margin: 0 5px;
+  border-radius: 6px;
+  margin: 0 3px;
 }
 
 .navContainer .navLinks a::before {
@@ -126,67 +136,125 @@
   left: 50%;
   width: 0;
   height: 2px;
-  background: linear-gradient(135deg, #7c4dff 0%, #ff6e6c 100%);
+  background: #3498db;
   transition: all 0.3s ease;
   transform: translateX(-50%);
 }
 
 .navContainer .navLinks a:hover {
-  color: black;
-  background: rgba(124, 77, 255, 0.05);
+  color: #2980b9;
+  background: rgba(52, 152, 219, 0.08);
   transform: translateY(-2px);
+}
+
+.landingHeader .navLinks a {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.landingHeader .navLinks a::before {
+  background: white;
+}
+
+.landingHeader .navLinks a:hover {
+  color: white;
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .navContainer .navLinks a:hover::before {
   width: 60%;
 }
 
+.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 15%;
+  width: 70%;
+  height: 2.5px;
+  background: #3498db;
+  border-radius: 2px;
+}
+
+.landingHeader .active::after {
+  background: white;
+}
+
+.fixedHeader .active::after {
+  background: #3498db;
+}
+
 .fixedHeader .navLinks a {
-  color: black !important;
+  color: #34495e !important;
+}
+
+.fixedHeader .navLinks a::before {
+  background: #3498db;
+}
+
+.fixedHeader .navLinks a:hover {
+  color: #2980b9 !important;
+  background: rgba(52, 152, 219, 0.08) !important;
+}
+
+/* Ensure active underline shows properly on fixed header */
+.fixedHeader .active::after {
+  background: #3498db;
 }
 
 /* Login cart styles */
 .navContainer .loginCart {
-  margin-right: 150px;
-  cursor: pointer;
   display: flex;
   align-items: center;
   z-index: 1000;
+  gap: 8px;
+  padding-right: 10px;
 }
 
-.navContainer .loginCart span {
-  padding: 10px 12px;
-  font-size: 18px;
+.navContainer .loginCart .iconLink {
+  padding: 6px 8px;
+  font-size: 15px;
   opacity: 0.8;
   cursor: pointer;
-  color: black;
-  background: rgba(44, 62, 80, 0.05);
+  color: #34495e;
+  background: rgba(52, 152, 219, 0.1);
   border-radius: 50%;
-  margin: 0 8px;
   transition: all 0.3s ease;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  min-height: 32px;
 }
 
-.navContainer .loginCart span:hover {
+.navContainer .loginCart .iconLink:hover {
   opacity: 1;
-  background: linear-gradient(135deg, #7c4dff 0%, #ff6e6c 100%);
-  color: black;
+  background: #3498db;
+  color: white;
   transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(124, 77, 255, 0.3);
+  box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
 }
 
-.fixedHeader .loginCart span {
-  color: black;
-  background: rgba(44, 62, 80, 0.05);
+.landingHeader .loginCart .iconLink {
+  color: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.15);
 }
 
-.fixedHeader .loginCart span:hover {
-  background: linear-gradient(135deg, #7c4dff 0%, #ff6e6c 100%);
-  color: black;
+.landingHeader .loginCart .iconLink:hover {
+  background: white;
+  color: #3498db;
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+}
+
+.fixedHeader .loginCart .iconLink {
+  color: #34495e;
+  background: rgba(52, 152, 219, 0.1);
+}
+
+.fixedHeader .loginCart .iconLink:hover {
+  background: #3498db;
+  color: white;
 }
 
 /* Mobile menu toggle button */
@@ -227,7 +295,17 @@
   z-index: 998;
 }
 .active {
-  background-color: rgb(97, 230, 235);
+  color: #3498db !important;
+  background: transparent !important;
+}
+
+.landingHeader .active {
+  color: white !important;
+}
+
+.fixedHeader .active {
+  color: #3498db !important;
+  background: transparent !important;
 }
 
 /* Ensure the mobile menu stays properly positioned when fixed */
@@ -246,62 +324,55 @@
 /* Responsive styles */
 @media (max-width: 1200px) {
   .container {
-    margin-left: 50px;
+    padding: 5px 30px;
+  }
+
+  .navContainer .navLinks {
+    margin-right: 20px;
   }
 
   .navContainer .navLinks a {
-    padding: 8px 15px;
-    font-size: 15px;
-  }
-
-  .navContainer .loginCart {
-    margin-right: 80px;
+    padding: 5px 10px;
+    font-size: 14px;
   }
 }
 
 @media (max-width: 992px) {
   .container {
-    margin-left: 30px;
+    padding: 4px 25px;
   }
 
   .navContainer .navLinks {
-    margin-right: 30px;
+    margin-right: 15px;
   }
 
   .navContainer .navLinks a {
-    padding: 6px 12px;
-    font-size: 14px;
+    padding: 4px 10px;
+    font-size: 13px;
   }
 
   .navContainer .loginCart {
-    margin-right: 40px;
+    padding-right: 8px;
   }
 
-  .navContainer .loginCart span {
-    width: 36px;
-    height: 36px;
-    font-size: 16px;
+  .navContainer .loginCart .iconLink {
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+    padding: 5px 7px;
   }
 }
 
 @media (max-width: 768px) {
   .container {
-    margin-left: 20px;
-    padding: 12px 0;
+    padding: 5px 20px;
   }
 
   .fixedHeader {
-    padding: 8px 0;
+    padding: 5px 20px;
   }
 
-  .fixedHeader .logoNameCont {
-    margin-left: 20px;
-  }
-
-  .menuToggle {
-    margin-right: 20px;
-  }
-
+  /* For mobile, the nav container will have white background when opened */
   .navContainer {
     position: fixed;
     top: 0;
@@ -325,12 +396,12 @@
   .navContainer .navLinks {
     display: flex;
     flex-direction: column;
-    margin-right: 0;
     width: 100%;
     text-align: left;
     padding: 0 20px;
   }
 
+  /* Mobile navigation links will be dark since mobile menu is white */
   .navContainer .navLinks a {
     padding: 15px 20px;
     margin: 5px 0;
@@ -339,7 +410,7 @@
     display: block;
     transition: all 0.3s ease;
     border-radius: 8px;
-    color: #2c3e50;
+    color: #34495e;
   }
 
   .navContainer .navLinks a:hover {
@@ -356,7 +427,6 @@
     margin: 30px 0;
     display: flex;
     justify-content: center;
-    margin-right: 0;
     padding: 0 20px;
     width: 100%;
   }
@@ -372,11 +442,11 @@
 
 @media (max-width: 480px) {
   .container {
-    margin-left: 15px;
+    padding: 5px 15px;
   }
 
   .logoNameCont .logoName {
-    font-size: 24px;
+    font-size: 20px;
   }
 
   .navContainer {
@@ -384,17 +454,21 @@
   }
 
   .navContainer .navLinks a {
-    font-size: 15px;
-    padding: 12px 20px;
+    font-size: 14px;
+    padding: 10px 16px;
   }
 
-  .fixedHeader .logoNameCont {
-    margin-left: 15px;
+  .navContainer .loginCart .iconLink {
+    width: 28px;
+    height: 28px;
+    font-size: 14px;
+    padding: 4px 6px;
   }
 
   .menuToggle {
     margin-right: 15px;
-    width: 40px;
-    height: 40px;
+    width: 34px;
+    height: 34px;
+    font-size: 20px;
   }
 }
