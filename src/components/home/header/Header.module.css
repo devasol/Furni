@@ -240,8 +240,9 @@
 }
 
 .landingHeader .loginCart .iconLink {
-  color: rgba(255, 255, 255, 0.85);
-  background: rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
 }
 
 .landingHeader .loginCart .iconLink:hover {
