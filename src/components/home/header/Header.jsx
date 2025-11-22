@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import styles from "./Header.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -10,6 +10,9 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 export default function Header() {
+  const location = useLocation();
+  const isLandingPage = location.pathname === '/'; // Assuming home page is at root path
+  
   const [isMobile, setIsMobile] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isFixed, setIsFixed] = useState(false);
@@ -54,9 +57,12 @@ export default function Header() {
 
   return (
     <>
+      {/* Placeholder to reserve space when header becomes fixed */}
+      {isFixed && <div style={{ height: '56px' }}></div>} {/* Approximate header height */}
+      
       {/* Fixed header that appears after scrolling */}
       <header
-        className={`${styles.container} ${isFixed ? styles.fixedHeader : ""}`}
+        className={`${styles.container} ${isLandingPage && !isFixed ? styles.landingHeader : ""} ${isFixed ? styles.scrolledHeader : ""}`}
       >
         <NavLink to="/" style={{ textDecoration: "none" }}>
           <div className={styles.logoNameCont}>
@@ -119,13 +125,13 @@ export default function Header() {
             </NavLink>
           </div>
           <div className={styles.loginCart}>
-            <NavLink to="/login">
+            <NavLink to="/login" className={styles.iconLink}>
               <span>
                 <FontAwesomeIcon icon={faUser} />
               </span>
             </NavLink>
 
-            <span>
+            <span className={styles.iconLink}>
               <FontAwesomeIcon icon={faCartShopping} />
             </span>
           </div>
