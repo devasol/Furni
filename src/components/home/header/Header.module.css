@@ -89,7 +89,8 @@
 
 .logoNameCont .logoName:hover {
   color: #3498db;
-  text-shadow: 0 2px 4px rgba(52, 152, 219, 0.2);
+  text-shadow: 0 2px 4px rgba(52, 152, 219, 0.25);
+  transition: all 0.3s ease;
 }
 
 .landingHeader .logoNameCont .logoName {
