@@ -113,7 +113,7 @@
 .navContainer .navLinks {
   display: flex;
   align-items: center;
-  margin-right: 25px;
+  margin-right: 30px;
 }
 
 .navContainer .navLinks a {
