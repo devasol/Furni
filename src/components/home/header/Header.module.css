@@ -9,6 +9,7 @@
   background: transparent;
   padding: 5px 40px;
   box-sizing: border-box;
+  z-index: 9998;
 }
 
 /* Landing Page Header Styles */
