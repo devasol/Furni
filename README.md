@@ -8,7 +8,7 @@
     <em>Experience the perfect blend of aesthetics, functionality, and craftsmanship</em>
   </p>
 
-[![Live Demo](https://img.shields.io/badge/LIVE_DEMO-🚀-brightgreen?style=for-the-badge)](https://get-furni.netlify.app/)
+[![Live Demo](https://get-furni.onrender.com/)
 [![License](https://img.shields.io/github/license/devasol/Furni?style=for-the-badge)](LICENSE)
 [![Stars](https://img.shields.io/github/stars/devasol/Furni?style=for-the-badge)](https://github.com/devasol/Furni/stargazers)
 [![Forks](https://img.shields.io/github/forks/devasol/Furni?style=for-the-badge)](https://github.com/devasol/Furni/network/members)
