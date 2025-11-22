@@ -58,7 +58,7 @@ export default function Header() {
   return (
     <>
       {/* Placeholder to reserve space when header becomes fixed */}
-      {isFixed && <div style={{ height: '56px' }}></div>} {/* Approximate header height */}
+      {isFixed && <div style={{ height: '58px' }}></div>} {/* Approximate header height */}
       
       {/* Fixed header that appears after scrolling */}
       <header
