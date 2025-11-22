@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import styles from "./WhyChooseUs.module.css";
-import homeSofaImg from "./../../../assets/homeAndSofa/homeSofa.webp";
+import homeSofaImg from "../../../assets/homeAndSofa/homeSofa.webp";
 
 const features = [
   {

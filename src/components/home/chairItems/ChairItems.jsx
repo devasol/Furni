@@ -1,8 +1,8 @@
 import { useState, useEffect, useRef } from "react";
 import styles from "./ChairItems.module.css";
-import nordic from "./../../../assets/items/img-nordic.png";
-import krkuzo from "./../../../assets/items/img-krukuzo.png";
-import ergonomic from "./.././../../assets/items/img-ergonomic.png";
+import nordic from "../../../assets/items/img-nordic.png";
+import krkuzo from "../../../assets/items/img-krukuzo.png";
+import ergonomic from "../../../assets/items/img-ergonomic.png";
 
 const items = [
   {

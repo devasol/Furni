@@ -78,13 +78,13 @@
 }
 
 .logoNameCont .logoName {
-  font-family: 'Montserrat', 'Poppins', sans-serif;
+  font-family: "Montserrat", "Poppins", sans-serif;
   font-size: 22px;
   font-weight: 800;
   color: #2c3e50;
   letter-spacing: -0.5px;
   transition: all 0.3s ease;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
 .logoNameCont .logoName:hover {
@@ -95,7 +95,7 @@
 
 .landingHeader .logoNameCont .logoName {
   color: white;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .landingHeader .logoNameCont .logoName:hover {
@@ -105,7 +105,7 @@
 
 .fixedHeader .logoNameCont .logoName {
   color: #2c3e50;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
 /* Navigation container */
@@ -125,7 +125,7 @@
 .navContainer .navLinks a {
   list-style-type: none;
   font-size: 15px;
-  font-family: 'Raleway', 'Inter', sans-serif;
+  font-family: "Raleway", "Inter", sans-serif;
   font-weight: 600;
   padding: 6px 16px;
   text-decoration: none;
@@ -306,6 +306,13 @@
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 998;
 }
+
+/* Ensure the mobile menu appears above other content */
+@media (max-width: 768px) {
+  .navContainer {
+    z-index: 999;
+  }
+}
 .active {
   color: #3498db !important;
   background: transparent !important;
@@ -313,7 +320,7 @@
 
 .landingHeader .active {
   color: white !important;
-  background: rgba(255, 255, 255, 0.1) !important;
+  background: transparent !important;
 }
 
 .fixedHeader .active {
@@ -385,21 +392,21 @@
     padding: 5px 20px;
   }
 
-  /* For mobile, the nav container will have white background when opened */
+  /* For mobile, the nav container will have gradient background when opened */
   .navContainer {
     position: fixed;
     top: 0;
     right: -100%;
-    width: 280px;
+    width: 300px;
     height: 100vh;
-    background: white;
+    background: linear-gradient(to bottom, white 0%, #f8f9fa 100%);
     flex-direction: column;
     justify-content: flex-start;
     padding-top: 80px;
     transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     z-index: 1000;
-    box-shadow: -5px 0 25px rgba(0, 0, 0, 0.1);
-    border-left: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: -8px 0 40px rgba(0, 0, 0, 0.15);
+    border-left: none;
   }
 
   .navContainer.navOpen {
@@ -411,29 +418,52 @@
     flex-direction: column;
     width: 100%;
     text-align: left;
-    padding: 0 20px;
+    padding: 10px 0;
   }
 
   /* Mobile navigation links will be dark since mobile menu is white */
   .navContainer .navLinks a {
-    padding: 15px 20px;
-    margin: 5px 0;
-    font-size: 16px;
-    width: 100%;
+    padding: 18px 20px 18px 60px; /* Significantly more left padding */
+    margin: 8px 15px;
+    font-size: 17px;
+    font-weight: 600;
+    width: calc(100% - 30px); /* Account for the side margins */
     display: block;
-    transition: all 0.3s ease;
-    border-radius: 8px;
-    color: #34495e;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    border-radius: 12px;
+    color: #2c3e50;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid transparent;
   }
 
-  .navContainer .navLinks a:hover {
-    background: linear-gradient(135deg, #7c4dff 0%, #ff6e6c 100%);
-    color: white;
+  /* .navContainer .navLinks a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(to bottom, #7c4dff 0%, #ff6e6c 100%);
+    transform: scaleY(0);
+    transition: transform 0.3s ease;
+    border-radius: 2px 0 0 2px;
+  } */
+
+  /* Mobile menu links - no hover effect */
+  @media (max-width: 768px) {
+    .navContainer .navLinks a:hover {
+      color: inherit !important;
+      transform: none !important;
+    }
+  }
+
+  .navContainer .navLinks a:hover::before {
+    transform: scaleY(1);
+  }
+
+  .navContainer .navLinks a:active {
     transform: translateX(5px);
-  }
-
-  .navContainer .navLinks a::before {
-    display: none;
   }
 
   .navContainer .loginCart {

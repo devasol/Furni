@@ -202,10 +202,7 @@ export default function Footer() {
       {/* Footer Bottom */}
       <div className={styles.footerBottom}>
         <div className={styles.footerBottomContent}>
-          <p>
-            &copy; {new Date().getFullYear()} Furni. Made with{" "}
-            <FontAwesomeIcon icon={faHeart} /> by Dawit S.
-          </p>
+          <p>&copy; {new Date().getFullYear()} Furni. Made by Dawit S.</p>
           <div className={styles.legalLinks}>
             <a href="#">Privacy Policy</a>
             <a href="#">Terms of Service</a>

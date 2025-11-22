@@ -4,7 +4,7 @@ import AboutUs from "./components/AboutUs/AboutUs";
 import HomePage from "./pages/homePage/HomePage";
 import ServicesPage from "./pages/services/ServicesPage";
 import BlogPage from "./pages/blog/BlogPage";
-
+import ScrollToTop from "./components/ScrollToTop";
 import ContactUsPage from "./pages/contactUs/ContactUsPage";
 import LoginPage from "./pages/login/LoginPage";
 
@@ -12,6 +12,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/about-us" element={<AboutUs />} />

@@ -1,7 +1,5 @@
-import Footer from "../home/footer/Footer";
-import Header from "../home/header/Header";
-import SplitText from "./SplitText/SplitText";
-import CircularGallery from "./gallary/CircularGallary.jsx";
+import SplitText from "./SplitText/SplitText.jsx";
+import CircularGallery from "./gallary/CircularGallary.jsx.jsx";
 import styles from "./Services.module.css";
 
 export default function Services() {
@@ -10,12 +8,8 @@ export default function Services() {
   };
   return (
     <div className={styles.container}>
-      <header>
-        <Header />
-      </header>
-
-      <section className={styles.content}>
-        <div style={{ height: "600px", position: "relative" }}>
+      <div className={styles.content}>
+        <div className={styles.galleryContainer}>
           <CircularGallery
             bend={3}
             textColor="#ffffff"
@@ -23,7 +17,7 @@ export default function Services() {
             scrollEase={0.02}
           />
         </div>
-      </section>
+      </div>
     </div>
   );
 }

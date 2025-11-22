@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Header from "../header/Header";
 import styles from "./HomeLanding.module.css";
-import img from "./../../../assets/sofa/sofa.png";
+import img from "../../../assets/sofa/sofa.png";
 
 const HomeLanding = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -41,7 +41,9 @@ const HomeLanding = () => {
 
   return (
     <>
-      <main className={`${styles.container} ${isVisible ? styles.visible : ""}`}>
+      <main
+        className={`${styles.container} ${isVisible ? styles.visible : ""}`}
+      >
         <Header />
         <div className={`${styles.line} ${styles.reveal}`}></div>
         <section className={styles.sectionContainer}>
