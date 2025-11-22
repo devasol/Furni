@@ -1,19 +1,19 @@
 <div align="center">
   <h1>🪑 Furni - Modern Furniture E-commerce Platform</h1>
   
-  ![Furni Banner](https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80)
+  ![Furni Banner](/frontend/src/assets/images-for-github/image.png)
   
   <p align="center">
     <strong>Transforming Spaces with Premium Quality Furniture & Exceptional Design</strong><br>
     <em>Experience the perfect blend of aesthetics, functionality, and craftsmanship</em>
   </p>
 
-  [![Live Demo](https://img.shields.io/badge/LIVE_DEMO-🚀-brightgreen?style=for-the-badge)](https://get-furni.netlify.app/)
-  [![License](https://img.shields.io/github/license/devasol/Furni?style=for-the-badge)](LICENSE)
-  [![Stars](https://img.shields.io/github/stars/devasol/Furni?style=for-the-badge)](https://github.com/devasol/Furni/stargazers)
-  [![Forks](https://img.shields.io/github/forks/devasol/Furni?style=for-the-badge)](https://github.com/devasol/Furni/network/members)
-  [![Issues](https://img.shields.io/github/issues/devasol/Furni?style=for-the-badge)](https://github.com/devasol/Furni/issues)
-  [![Last Commit](https://img.shields.io/github/last-commit/devasol/Furni?style=for-the-badge)](https://github.com/devasol/Furni/commits/main)
+[![Live Demo](https://img.shields.io/badge/LIVE_DEMO-🚀-brightgreen?style=for-the-badge)](https://get-furni.netlify.app/)
+[![License](https://img.shields.io/github/license/devasol/Furni?style=for-the-badge)](LICENSE)
+[![Stars](https://img.shields.io/github/stars/devasol/Furni?style=for-the-badge)](https://github.com/devasol/Furni/stargazers)
+[![Forks](https://img.shields.io/github/forks/devasol/Furni?style=for-the-badge)](https://github.com/devasol/Furni/network/members)
+[![Issues](https://img.shields.io/github/issues/devasol/Furni?style=for-the-badge)](https://github.com/devasol/Furni/issues)
+[![Last Commit](https://img.shields.io/github/last-commit/devasol/Furni?style=for-the-badge)](https://github.com/devasol/Furni/commits/main)
 
   <a href="https://reactjs.org/" target="_blank">
     <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React">
@@ -76,26 +76,31 @@ Furni isn't just another furniture store—it's your gateway to **transforming l
 ## ✨ **Key Features**
 
 ### 🏠 **Intuitive Navigation**
+
 - **Smooth scrolling** experience across all sections
 - **Mobile-responsive** design optimized for all devices
 - **Fast loading** with optimized performance
 
 ### 🛒 **Advanced Shopping Experience**
+
 - **Product filtering** and sorting capabilities
 - **Detailed product views** with 360° perspectives
 - **Secure checkout** process with multiple payment options
 
 ### 📱 **Cross-Platform Compatibility**
+
 - **Progressive Web App (PWA)** support
 - **Touch-friendly** interface for mobile users
 - **Accessibility** compliant design
 
 ### 🎨 **Design Excellence**
+
 - **Modern UI/UX** with clean aesthetics
 - **Custom animations** and micro-interactions
 - **Responsive typography** for optimal readability
 
 ### 💬 **Customer Engagement**
+
 - **Real-time chat support**
 - **Customer reviews** and ratings
 - **Wishlist** and favorites functionality
@@ -106,15 +111,15 @@ Furni isn't just another furniture store—it's your gateway to **transforming l
 
 <div align="center">
 
-| Technology | Purpose | Description |
-|------------|---------|-------------|
-| [**React 19**](https://reactjs.org/) | UI Framework | Component-based architecture with hooks |
-| [**Vite**](https://vitejs.dev/) | Build Tool | Lightning-fast development & builds |
-| [**Tailwind CSS**](https://tailwindcss.com/) | Styling | Utility-first CSS framework |
-| [**React Router**](https://reactrouter.com/) | Navigation | Client-side routing |
-| [**GSAP**](https://gsap.com/) | Animations | Professional-grade animations |
-| [**Framer Motion**](https://www.framer.com/motion/) | UI Motion | Smooth interactions & transitions |
-| [**FontAwesome**](https://fontawesome.com/) | Icons | Comprehensive icon library |
+| Technology                                          | Purpose      | Description                             |
+| --------------------------------------------------- | ------------ | --------------------------------------- |
+| [**React 19**](https://reactjs.org/)                | UI Framework | Component-based architecture with hooks |
+| [**Vite**](https://vitejs.dev/)                     | Build Tool   | Lightning-fast development & builds     |
+| [**Tailwind CSS**](https://tailwindcss.com/)        | Styling      | Utility-first CSS framework             |
+| [**React Router**](https://reactrouter.com/)        | Navigation   | Client-side routing                     |
+| [**GSAP**](https://gsap.com/)                       | Animations   | Professional-grade animations           |
+| [**Framer Motion**](https://www.framer.com/motion/) | UI Motion    | Smooth interactions & transitions       |
+| [**FontAwesome**](https://fontawesome.com/)         | Icons        | Comprehensive icon library              |
 
 </div>
 
@@ -169,23 +174,27 @@ Furni/
 ## 🛠️ **Getting Started**
 
 ### Prerequisites
+
 - **Node.js** (v18 or higher)
 - **npm** or **yarn** package manager
 
 ### Installation
 
 1. **Clone the repository**
+
 ```bash
 git clone https://github.com/devasol/Furni.git
 cd Furni/frontend
 ```
 
 2. **Install dependencies**
+
 ```bash
 npm install
 ```
 
 3. **Start the development server**
+
 ```bash
 npm run dev
 ```
@@ -194,24 +203,26 @@ npm run dev
 
 ### Available Scripts
 
-| Script | Description |
-|--------|-------------|
-| `npm run dev` | Starts development server with hot reload |
-| `npm run build` | Creates production-ready optimized build |
-| `npm run preview` | Locally previews production build |
-| `npm run lint` | Checks code for linting errors |
+| Script            | Description                               |
+| ----------------- | ----------------------------------------- |
+| `npm run dev`     | Starts development server with hot reload |
+| `npm run build`   | Creates production-ready optimized build  |
+| `npm run preview` | Locally previews production build         |
+| `npm run lint`    | Checks code for linting errors            |
 
 ---
 
 ## 🎨 **Design Philosophy**
 
 ### **Visual Hierarchy**
+
 - **Clean layouts** with focused attention areas
 - **Thoughtful typography** for optimal readability
 - **Harmonious color palettes** inspired by nature
 - **Consistent spacing** for visual rhythm
 
 ### **User Experience**
+
 - **Intuitive navigation** with clear pathways
 - **Meaningful transitions** for smooth experiences
 - **Responsive interactions** for all input methods
@@ -222,6 +233,7 @@ npm run dev
 ## 🌍 **Features by Category**
 
 ### 🏡 **Frontend Application (In `frontend/` directory)**
+
 - **Modern landing page** with captivating visuals
 - **Hero section** showcasing brand value
 - **Featured furniture** with hover effects
@@ -237,12 +249,15 @@ npm run dev
 ## 🔧 **Configuration**
 
 ### Environment Variables
+
 None required for development. Production deployment may require:
+
 - API endpoints for backend services
 - Analytics tracking IDs
 - Payment gateway configurations
 
 ### Customization Options
+
 - **Theme colors** can be modified in `frontend/src/index.css`
 - **Typography** can be adjusted in `frontend/src/App.css`
 - **Animations** timing and effects customizable
@@ -254,9 +269,9 @@ None required for development. Production deployment may require:
 
 <div align="center">
 
-| **Homepage Hero** | **Product Showcase** | **Mobile View** |
-|-------------------|----------------------|-----------------|
-| ![Homepage](https://placehold.co/600x400/8b5a2b/ffffff?text=Furni+Homepage) | ![Products](https://placehold.co/600x400/d2b48c/ffffff?text=Furniture+Collection) | ![Mobile](https://placehold.co/300x600/7c4dff/ffffff?text=Furni+Mobile) |
+| **Homepage Hero**                                             | **Product Showcase**                                                                              | **Mobile View**                                                                                 |
+| ------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| ![Homepage](/frontend/src/assets/images-for-github/image.png) | ![Products](/frontend/src/assets/images-for-github/Screenshot%20from%202025-11-22%2012-58-04.png) | ![Mobile](/frontend/src/assets/images-for-github/Screenshot%20from%202025-11-22%2012-56-33.png) |
 
 </div>
 
@@ -267,11 +282,13 @@ None required for development. Production deployment may require:
 We welcome contributions from the community! Here's how you can help:
 
 ### 🐛 **Report Issues**
+
 - Find and report bugs
 - Suggest new features
 - Improve documentation
 
 ### ✨ **Code Contributions**
+
 1. Fork the repository
 2. Create a feature branch (`git checkout -b feature/amazing-feature`)
 3. Commit your changes (`git commit -m 'Add amazing feature'`)
@@ -279,6 +296,7 @@ We welcome contributions from the community! Here's how you can help:
 5. Open a Pull Request
 
 ### 📖 **Documentation**
+
 - Improve existing documentation
 - Add examples and use cases
 - Translate for international users
@@ -333,12 +351,12 @@ SOFTWARE.
 ⭐ **Star this repository** if you find it helpful  
 🐛 **Report issues** to help improve the project  
 🔄 **Share with friends** who might benefit from this  
-✨ **Contribute** to make it even better  
+✨ **Contribute** to make it even better
 
 <a href="https://github.com/devasol/Furni/stargazers">
   <img src="https://img.shields.io/github/stars/devasol/Furni?style=social" alt="GitHub stars">
 </a>
 
-**Built with ❤️ by [Dawit S.](https://github.com/devasol)**
+**Built by [Dawit S.](https://github.com/devasol)**
 
 </div>
