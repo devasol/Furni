@@ -149,15 +149,18 @@
 
 .landingHeader .navLinks a {
   color: rgba(255, 255, 255, 0.85);
+  transition: all 0.3s ease;
 }
 
 .landingHeader .navLinks a::before {
   background: white;
+  transition: all 0.3s ease;
 }
 
 .landingHeader .navLinks a:hover {
   color: white;
   background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
 }
 
 .navContainer .navLinks a:hover::before {
