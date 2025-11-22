@@ -174,9 +174,10 @@
   bottom: 0;
   left: 15%;
   width: 70%;
-  height: 2.5px;
+  height: 3px;
   background: #3498db;
   border-radius: 2px;
+  transition: width 0.3s ease;
 }
 
 .landingHeader .active::after {
